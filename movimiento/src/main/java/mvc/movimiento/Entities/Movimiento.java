@@ -12,8 +12,8 @@ import java.util.Date;
 public class Movimiento {
     //Atributos de la class Movimiento financiero id long, concept string, amount double, user string, createAt date, updateAt date
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, unique = true)
+    @GeneratedValue(strategy = GenerationType.AUTO) //autoincremental
+    @Column(name = "id")
     private Long id; //id de la tabla en la base de datos para la clase Movimiento
 
 
