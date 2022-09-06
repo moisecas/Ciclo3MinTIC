@@ -21,6 +21,7 @@ public class MovimientoService {
     }
 
     public Movimiento guardarMovimiento(Movimiento movimiento){
+
         return movimientoRepository.save(movimiento);
     }
 
