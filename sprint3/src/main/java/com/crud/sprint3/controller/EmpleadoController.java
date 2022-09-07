@@ -29,6 +29,8 @@ public class EmpleadoController {
     private void eliminarEmpleado(@PathVariable("id") Long id){
         empleadoService.eliminarEmpleado(id);
     }
+
+
     @PutMapping(path = "/empleado")
     private void actualizarEmpleado(@RequestBody Empleado empleado){
         empleadoService.crearEmpleado(empleado); //llama al metodo crearEmpleado del servicio y le pasa el empleado que se recibe por parametro para crear el empleado

@@ -1,10 +1,10 @@
 package com.crud.sprint3.model;
 
-
 import com.crud.sprint3.enums.EnumTipo;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @AllArgsConstructor //Constructor con todos los atributos
@@ -12,25 +12,22 @@ import javax.persistence.*;
 @Getter //Genera los getters
 @Setter //Genera los setters
 @ToString //Genera el metodo toString
-@Table(name = "empleado")
-public class Empleado {
-
-    //id long auto
+@Table(name = "perfil")
+public class Perfil {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
     @Column(name = "id")
     private long id;
 
-    private String nombre;
-    private String apellido;
-    private String email;
-    private String telefono;
+    @Column(name = "image")
+    private String image;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "tipo")
-    private EnumTipo tipo; //EnumTipo es una clase que creamos en el paquete enums
+    @Column(name = "phone")
+    private String phone;
 
+    @Column(name = "createAt")
+    private Date createAt;
 
-
-
+    @Column(name = "updateAt")
+    private Date updateAt;
 }
