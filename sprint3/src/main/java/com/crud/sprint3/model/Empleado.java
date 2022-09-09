@@ -17,13 +17,20 @@ public class Empleado {
 
     //id long auto
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "apellido")
     private String apellido;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "telefono")
     private String telefono;
 
     @Enumerated(EnumType.STRING)

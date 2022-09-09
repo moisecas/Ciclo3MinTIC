@@ -17,7 +17,7 @@ import java.util.List;
 public class Empresa {
 
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id; //id de la tabla en la base de datos para la clase Empresa
 

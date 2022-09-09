@@ -32,4 +32,9 @@ public class EmpleadoService {
         empleadoRepository.deleteById(id);
     }
 
+    //obtenerEmpleado por id
+    public Empleado obtenerEmpleadoPorId(Long id){
+        return empleadoRepository.findById(id).get();
+    }
+
 }

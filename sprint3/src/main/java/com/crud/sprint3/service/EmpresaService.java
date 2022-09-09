@@ -33,4 +33,8 @@ public class EmpresaService {
     public Empresa obtenerEmpresaPorId(Long id) {
         return empresaRepository.findById(id).get();
     }
+
+
+
+
 }

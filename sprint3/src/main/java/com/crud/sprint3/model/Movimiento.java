@@ -16,7 +16,7 @@ import java.util.Date;
 public class Movimiento {
 
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 
@@ -32,8 +32,11 @@ public class Movimiento {
     @Column(name = "updateAt")
     private Date updateAt;
 
-    //relacion con la tabla empresa
+    //relacion con la tabla empresa una empresa puede tener muchos movimientos
+
+
     @ManyToOne
     @JoinColumn(name = "empresa_id")
     private Empresa empresa; //id de la tabla en la base de datos para la clase Empresa
+
 }

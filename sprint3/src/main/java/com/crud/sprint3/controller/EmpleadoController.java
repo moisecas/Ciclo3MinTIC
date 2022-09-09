@@ -36,6 +36,10 @@ public class EmpleadoController {
         empleadoService.crearEmpleado(empleado); //llama al metodo crearEmpleado del servicio y le pasa el empleado que se recibe por parametro para crear el empleado
     }
 
+    @GetMapping(path = "/empleado/{id}")
+    private Empleado obtenerEmpleadoPorId(@PathVariable("id") Long id){
+        return empleadoService.obtenerEmpleadoPorId(id);
+    }
 
 
 

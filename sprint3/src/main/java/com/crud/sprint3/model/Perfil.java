@@ -15,7 +15,7 @@ import java.util.Date;
 @Table(name = "perfil")
 public class Perfil {
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 

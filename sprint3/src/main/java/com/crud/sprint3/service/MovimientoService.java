@@ -6,6 +6,7 @@ import com.crud.sprint3.repositories.MovimientoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -37,4 +38,11 @@ public class MovimientoService {
         public List<Movimiento> obtenerMovimientosPorEmpresa(Long id) {
             return movimientoRepository.findByEmpresaId(id);
         }
+
+        public List<Movimiento> obtenerPorEmpresa(Long id) {
+            return movimientoRepository.findByEmpresaIdMovimiento(id);
+        }
+
+
+
 }
