@@ -46,4 +46,16 @@ public class MovimientoController {
             return movimientoService.obtenerPorEmpresa(id);
         }
 
+        @PostMapping("/empresa/{id}/movimiento")
+        public void guardarMovimientoPorEmpresa(@PathVariable("id") Long id, @RequestBody Movimiento movimiento){
+            movimientoService.guardarMovimientoPorEmpresa(id, movimiento);
+        }
+        @DeleteMapping("/empresa/{id}/movimiento/{idMovimiento}")
+        public void eliminarMovimientoPorEmpresa(@PathVariable("id") Long id, @PathVariable("idMovimiento") Long idMovimiento){
+            movimientoService.eliminarMovimientoPorEmpresa(id, idMovimiento);
+        }
+        
+
+
+
 }

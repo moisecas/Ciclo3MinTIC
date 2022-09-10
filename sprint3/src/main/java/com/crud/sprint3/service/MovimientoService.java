@@ -43,6 +43,15 @@ public class MovimientoService {
             return movimientoRepository.findByEmpresaIdMovimiento(id);
         }
 
+        public void guardarMovimientoPorEmpresa(Long id, Movimiento movimiento){
+            movimiento.setEmpresaId(id);
+            movimientoRepository.save(movimiento);
+        }
+
+        public void eliminarMovimientoPorEmpresa(Long id, Long idMovimiento){
+            movimientoRepository.deleteById(idMovimiento);
+        }
+
 
 
 }
