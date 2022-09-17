@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agregar Personas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div class="px-4 py-5 text-center d-flex flex-column align-items-center">
+            <h1>Nueva persona</h1>
+            <form th:action="@{/personal}" th:method="post" th:object="${persona}" class="d-flex flex-column gap-3 align-items-center">
+                <input th:field="*{nombre}"   class="form-control" type="text" placeholder="Nombre">
+                <input th:field="*{apellido}"   class="form-control" type="text" placeholder="Apellido">
+                <input th:field="*{email}"   class="form-control" type="text" placeholder="Email">
+                <input th:field="*{telefono}"   class="form-control" type="text" placeholder="Teléfono">
+                <button class="btn btn-primary" type="submit">Crear persona</button>
+            </form>
+        </div>
+    </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
