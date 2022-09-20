@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>movimientos 2</title>
+</head>
+<body>
+    <h1>Lista de Movimientos</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Valor</th>
+            <th>Concepto</th>
+            <th>Usuario Responsable</th>
+            <th>Fecha del Movimiento</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr th:each="movimiento : ${movlist}"> //movlist es el nombre de la lista que creamos en el controller
+            <td th:text="${movimiento.id}"></td>
+            <td th:text="${#numbers.formatCurrency(movimiento.monto)}"></td>
+            <td th:if="${movimiento.concepto=='1'}">Papeleria</td>
+            <td th:if="${movimiento.concepto=='2'}">Servicios Publicos/privados</td>
+            <td th:if="${movimiento.concepto=='3'}">Operativos</td>
+            <td th:if="${movimiento.concepto=='4'}">Caja Menor</td>
+            <td th:if="${movimiento.concepto=='5'}">Tributario</td>
+            <td th:if="${movimiento.concepto=='6'}">Mobiliario</td>
+            <td th:if="${movimiento.concepto=='7'}">Maquinaria y Equipo</td>
+            <td th:if="${movimiento.concepto=='8'}">Nomina</td>
+            <td th:text="${movimiento.usuario.nombre}"></td>
+            <td th:text="${movimiento.fecha}"></td>
+
+            <td th:text="${#dates.format(movimiento.fecha, 'dd/MM/yyyy')}"></td>
+            <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarMovimiento/{id}(id=${movimiento.id})}">Editar</a></button></td>
+            <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarMovimiento/{id}(id=${movimiento.id})}">Eliminar</a></button></td>
+        </tr>
+    </table>
+    <br>
+
+</body>
+</html>

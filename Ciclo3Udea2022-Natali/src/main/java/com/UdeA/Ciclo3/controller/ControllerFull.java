@@ -174,17 +174,18 @@ public class ControllerFull {
     //MOVIMIENTOS
 
     @RequestMapping ("/VerMovimientos")// Controlador que nos lleva al template donde veremos todos los movimientos
-    public String viewMovimientos(@RequestParam(value="pagina", required=false, defaultValue = "1") int NumeroPagina,
-                                  @RequestParam(value="medida", required=false, defaultValue = "5") int medida,
-                                  Model model, @ModelAttribute("mensaje") String mensaje){
-        Page<MovimientoDinero> paginaMovimientos= movimientosRepositor.findAll(PageRequest.of(NumeroPagina,medida));
-        model.addAttribute("movlist",paginaMovimientos.getContent());
-        model.addAttribute("paginas",new int[paginaMovimientos.getTotalPages()]);
-        model.addAttribute("paginaActual", NumeroPagina);
+    public String viewMovimientos(Model model, @ModelAttribute("mensaje") String mensaje){
+        List<MovimientoDinero> listaMovimientos=movimientosService.getAllMovimientos();
+        model.addAttribute("movilist",listaMovimientos);
         model.addAttribute("mensaje",mensaje);
-        Long sumaMonto=movimientosService.obtenerSumaMontos();
-        model.addAttribute("SumaMontos",sumaMonto);//Mandamos la suma de todos los montos a la plantilla
         return "verMovimientos"; //Llamamos al HTML
+    }
+
+    @RequestMapping("/verlistamovimientos")
+    public String verListaMovimientos( @RequestBody String id, Model model){
+        List<MovimientoDinero> listaMovimientos=movimientosService.getAllMovimientos();
+        model.addAttribute("movlist",listaMovimientos);
+        return "verListaMovimientos"; //Llamamos al HTML
     }
 
     @GetMapping("/AgregarMovimiento") //Controlador que nos lleva al template donde podremos crear un nuevo movimiento

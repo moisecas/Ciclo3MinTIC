@@ -14,6 +14,8 @@ public class MovimientosService {
     @Autowired
     MovimientosRepository movimientosRepository;
 
+
+
     public List<MovimientoDinero> getAllMovimientos(){ //Metodo que me muestra todos los movimientos sin ningn filtro
         List<MovimientoDinero> movimientosList = new ArrayList<>();
         movimientosRepository.findAll().forEach(movimiento -> movimientosList.add(movimiento));  //Recorremos el iterable que regresa el metodo findAll del Jpa y lo guardamos en la lista creada
@@ -67,4 +69,8 @@ public class MovimientosService {
     public Integer IdPorCorreo(String Correo){
         return movimientosRepository.IdPorCorreo(Correo);
     }
+
+
+
+
 }
