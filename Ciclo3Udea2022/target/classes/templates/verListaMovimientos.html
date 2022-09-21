@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>movimientos 2</title>
+</head>
+<body>
+    <h1>Lista de Movimientos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>monto</th>
+                <th>Concepto</th>
+                <th>usuario</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="movimiento : ${movlist}">
+                <td th:text="${movilist.id}"></td>
+                <td th:text="${movilist.monto}"></td>
+                <td th:text="${movilist.concepto}"></td>
+                <td th:text="${movilist.usuario}"></td>
+                <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarMovimiento/{id}(id=${movimiento.id})}">Editar</a></button></td>
+                <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarMovimiento/{id}(id=${movimiento.id})}">Eliminar</a></button></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br>
+<script>
+
+
+
+</script>
+
+</body>
+</html>
