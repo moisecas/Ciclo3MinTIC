@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevTeam</title>
+    <title>Super Index</title>
+    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
@@ -22,81 +23,57 @@
     nav{
         margin-bottom: 50px;
         border-radius: 20px;
-    }      
-
-    div{
-        border-radius: 20px;
-        
     }
+
+    
+    
    
 
 </style>
-
 <body>
-    <div class="container" >
+    <div class="container"> 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <button type="button" class="btn btn-primary"><a th:href="@{/VerEmpresas}">Empresas</a></button>
-                <button type="button" class="btn btn-primary"><a th:href="@{/VerEmpleados}">Empleados</a></button>
-                <button type="button" class="btn btn-primary"><a th:href="@{/DeveloperTeam}">Developer Team</a></button>
-                <button type="button" class="btn btn-primary"><a th:href="@{/VerMovimientos}">Movimientos</a></button>
+              <a class="navbar-brand" href="#">Empresa</a>
+              <a class="navbar-brand" href="#">Empleado</a>
+              <a class="navbar-brand" href="#">Movimiento</a> 
+              <a class="navbar-brand" href="./developer.html">Developer Team</a> 
 
             </div>
-        </nav>
-
+          </nav>
         <div class="row">
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-
+                    <img class="card-img-top" src="./img/empresa.jpg" alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Andres Serrano</h5>
-                      <p class="card-text">Scrum Master</p>
+                      <h5 class="card-title">Empresa</h5>
+                      <p class="card-text">Ultimas empresas registradas</p>
                       <a href="./empresa.html" class="btn btn-primary">Ver</a>
                     </div>
                   </div>
             </div>
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-
+                    <img class="card-img-top" src="./img/empleado.jpg" alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Andres Valencia</h5>
-                      <p class="card-text">Administrador de base de datos</p>
+                      <h5 class="card-title">Empleado</h5>
+                      <p class="card-text">últimos empleados registrados</p>
                       <a href="./empleado.html" class="btn btn-primary">Ver</a> 
                     </div>
                   </div>
             </div>
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-
+                    <img class="card-img-top" src="./img/movimiento.jpg" alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Saul Echeverri</h5>
-                      <p class="card-text">Desarrollador</p>
+                      <h5 class="card-title">Movimientos</h5>
+                      <p class="card-text">Ultimos movimientos.</p>
                       <a href="./movimiento.html" class="btn btn-primary">Ver</a> 
                     </div>
                   </div>
             </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-
-                    <div class="card-body">
-                      <h5 class="card-title">Joseph Liev </h5>
-                      <p class="card-text">Analista</p>
-                      <a href="./movimiento.html" class="btn btn-primary">Ver</a> 
-                    </div>
-                  </div>
-            </div>
-
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-
-                    <div class="card-body">
-                      <h5 class="card-title">Moisés Castro</h5>
-                      <p class="card-text">Desarrollador</p> 
-                      <a href="./movimiento.html" class="btn btn-primary">Ver</a> 
-                    </div>
-                  </div>
-            </div>
-
+          
+          
     </div>
 </body>
 </html>

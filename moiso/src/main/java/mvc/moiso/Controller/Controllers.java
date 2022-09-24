@@ -268,6 +268,12 @@ public class Controllers {
         return "accessDenied";
     }
 
+    //Controlador developer team
+    @RequestMapping(value="/DeveloperTeam")
+    public String developerTeam(){
+        return "developer";
+    }
+
 
     //Metodo para encriptar contraseñas
     @Bean
